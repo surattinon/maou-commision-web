@@ -13,6 +13,10 @@ module.exports = {
       animation: {
         aurora: "aurora 60s linear infinite",
       },
+      fontFamily: {
+        sans: ['var(--font-montserrat)', 'sans-serif'],
+        thai: ['var(--font-noto-thai)', 'sans-serif'],
+      },
       keyframes: {
         aurora: {
           from: {

@@ -3,6 +3,9 @@
 import { useState, FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 
+import { GridBackground } from '@/components/blocks/spotlight-new'
+import { Spotlight } from '@/components/blocks/spotlight-new'
+
 export default function StatusManagement() {
   const [password, setPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -17,7 +20,7 @@ export default function StatusManagement() {
     if (password === correctPassword) {
       setIsAuthenticated(true)
       // Fetch current status
-      fetch('/api/status')
+      fetch('/[lang]/api/status')
         .then(res => res.json())
         .then(data => setStatus(data.status))
     } else {
@@ -26,7 +29,7 @@ export default function StatusManagement() {
   }
 
   const updateStatus = async (newStatus: 'OPEN' | 'CLOSE') => {
-    const response = await fetch('/api/status', {
+    const response = await fetch('/[lang]/api/status', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +47,9 @@ export default function StatusManagement() {
   if (!isAuthenticated) {
     return (
       <div className="h-screen w-full flex items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-        <div className="p-8 max-w-md w-full">
+      <GridBackground />
+      <Spotlight />
+        <div className="z-10 p-8 max-w-md w-full">
           <h1 className="text-2xl text-white mb-6">Admin Login</h1>
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleLogin}>
@@ -69,10 +74,12 @@ export default function StatusManagement() {
 
   return (
     <div className="h-screen w-full flex items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <div className="p-8 max-w-md w-full">
+      <GridBackground />
+      <Spotlight />
+      <div className="z-10 p-8 max-w-md w-full">
         <h1 className="text-2xl text-white mb-6">Commission Status</h1>
         <div className="flex justify-between mb-8">
-          <p className="text-white">Current Status: <span className={`ml-3 text-center ${status == 'OPEN' ? 'text-green-400 drop-shadow-[0px_0px_23px_rgba(87,227,137,1)]' : 'text-red-400 drop-shadow-[0px_0px_13px_rgba(255,0,123,1)]'}`}>{status}</span></p>
+          <p className="text-white">Current Status: <span className={`ml-3 text-center font-bold ${status == 'OPEN' ? 'text-green-400 drop-shadow-[0px_0px_10px_rgba(87,227,137,1)]' : 'text-red-400 drop-shadow-[0px_0px_10px_rgba(255,0,123,1)]'}`}>{status}</span></p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <button

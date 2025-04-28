@@ -24,10 +24,10 @@ export default function Home() {
         <div className="w-full h-px bg-gray-600 mb-12 opacity-50"></div>
 
         <div className="flex w-full justify-center space-x-6 mb-20">
-          <Link href="/info">
+          <Link href="/en/info">
             <HoverButton className="text-white">INFO</HoverButton>
           </Link>
-          <Link href="/pricing">
+          <Link href="/en/pricing">
             <HoverButton className="text-white">PRICE</HoverButton>
           </Link>
 

@@ -1,0 +1,40 @@
+{
+  "info": {
+    "ruleTitle": "Rules & Reminders",
+    "rules": [
+      "Please be kind and polite when communicating! ✨",
+      "To book a slot, a deposit of 50% or 100% is required.",
+      "If you cancel after I've started working, the deposit is non-refundable (if you cancel more than twice, you'll be added to the blacklist 💔).",
+      "My line art may look a bit sketchy at first, but I promise to clean it up nicely for the final work!",
+      "I only accept direct communication — no middlemen, please! ❗ If someone else is reserving for you, kindly mention who it's for.",
+      "If you want extra detailed work, just let me know! (Prices may adjust depending on the details ✏️)",
+      "After the line art is done, I'll send it to you for a final check before coloring.",
+      "Adding extra characters will cost the same as the base price.",
+      "Finished works will be sent via Google Drive & E-mail 📩"
+    ],
+    "serviceTitle": "What I can do for you",
+    "services": [
+      "You can request up to 3 free revisions! (After that, it'll be 50-100 per revision 💬)",
+      "For commercial use, please notify me beforehand!",
+      "Need a transparent background? Just ask! 🪄",
+      "Specific size or resolution? Let's discuss it together!",
+      "Work time usually takes 1 day to 2 weeks depending on the queue 🕰️"
+    ],
+    "paymentTitle": "Payment Details",
+    "payments": [
+      "Payment via Bank transfer or Wallet 💳",
+      "Commercial usage fee is x2 the original price."
+    ]
+  },
+  "pricing": {
+    "title": "Scale & Pricing",
+    "prices": [
+      "Face-shot: Donations start from <b>600 THB.</b>",
+      "Bust-up (Head to Chest): Donations start from <b>650 THB.</b>",
+      "Omakase (Random scale): Donations start from <b>680 THB.</b>",
+      "Full-CG (Full Background) & (Head to Waist scale): Donations start from <b>1,099 THB.</b>",
+      "Adding a background: <b>+100 THB</b> (Price may increase based on background complexity.)",
+      "Prices may vary depending on <b>the level of detail.</b>"
+    ]
+  }
+}

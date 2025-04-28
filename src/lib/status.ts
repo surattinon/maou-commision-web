@@ -1,6 +1,6 @@
 export async function getStatus(): Promise<string> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/status`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/[lang]/api/status`, {
       cache: 'no-store' // Don't cache this request
     })
     const data = await response.json()
