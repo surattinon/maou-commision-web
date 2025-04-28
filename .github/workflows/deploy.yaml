@@ -39,10 +39,10 @@ jobs:
           port: 26
           script: |
                 docker pull ghcr.io/${{ github.repository }}:latest
-                docker stop nextjs-app || true
-                docker rm nextjs-app || true
-                docker run -d --name nextjs-app \
-                  -p 3000:3000 \
+                docker stop maou-web || true
+                docker rm maou-web || true
+                docker run -d --name maou-web \
+                  -p 3003:3000 \
                   -e NEXT_PUBLIC_BASE_URL="${{ secrets.NEXT_PUBLIC_BASE_URL }}" \
                   -e NEXT_PUBLIC_ADMIN_PASSWORD="${{ secrets.NEXT_PUBLIC_ADMIN_PASSWORD }}" \
                   ghcr.io/${{ github.repository }}:latest
