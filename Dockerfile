@@ -22,7 +22,7 @@ COPY --from=builder ./.next ./.next
 COPY --from=builder ./public ./public
 COPY --from=builder ./package.json ./package.json
 COPY --from=builder ./bun.lock ./bun.lock
-COPY --from=builder ./next.config.js ./next.config.js
+COPY --from=builder ./next.config.ts ./next.config.ts
 
 # Install only production dependencies
 RUN bun install --production
