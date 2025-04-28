@@ -8,7 +8,11 @@ RUN bun install --frozen-lockfile
 
 COPY . .
 
-RUN bun run build
+RUN echo "Starting build process..." && \
+    bun --version && \
+    ls -la && \
+    cat package.json && \
+    bun run build || (echo "Build failed" && cat .next/error.log || echo "No error log found")
 
 FROM oven/bun:latest
 
