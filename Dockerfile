@@ -17,11 +17,11 @@ WORKDIR /app
 COPY --from=builder ./.next ./.next
 COPY --from=builder ./public ./public
 COPY --from=builder ./package.json ./package.json
-COPY --from=builder ./bun.lockb ./bun.lockb
+COPY --from=builder ./bun.lockb* ./
 COPY --from=builder ./next.config.js ./next.config.js
 
 # Install only production dependencies
-RUN bun install --production --frozen-lockfile
+RUN bun install --production
 
 # Set environment to production
 ENV NODE_ENV production
