@@ -2,7 +2,7 @@ FROM oven/bun:latest as builder
 
 WORKDIR /app
 
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 
 RUN bun install --frozen-lockfile
 
@@ -17,7 +17,7 @@ WORKDIR /app
 COPY --from=builder ./.next ./.next
 COPY --from=builder ./public ./public
 COPY --from=builder ./package.json ./package.json
-COPY --from=builder ./bun.lockb* ./
+COPY --from=builder ./bun.lock ./bun.lock
 COPY --from=builder ./next.config.js ./next.config.js
 
 # Install only production dependencies
