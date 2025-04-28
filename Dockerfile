@@ -18,11 +18,11 @@ FROM oven/bun:latest
 
 WORKDIR /app
 
-COPY --from=builder ./.next ./.next
-COPY --from=builder ./public ./public
-COPY --from=builder ./package.json ./package.json
-COPY --from=builder ./bun.lock ./bun.lock
-COPY --from=builder ./next.config.ts ./next.config.ts
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/bun.lock ./bun.lock
+COPY --from=builder /app/next.config.ts ./next.config.ts
 
 # Install only production dependencies
 RUN bun install --production
