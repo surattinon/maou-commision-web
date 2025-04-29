@@ -1,6 +1,7 @@
 name: Deploy NextJS Web to Home Lab
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
