@@ -44,6 +44,6 @@ jobs:
                 docker rm maou-web || true
                 docker run -d --name maou-web \
                   -p 3003:3000 \
-                  -e NEXT_PUBLIC_BASE_URL="${{ secrets.NEXT_PUBLIC_BASE_URL }}" \
-                  -e NEXT_PUBLIC_ADMIN_PASSWORD="${{ secrets.NEXT_PUBLIC_ADMIN_PASSWORD }}" \
+                  --build-arg NEXT_PUBLIC_BASE_URL="${{ secrets.NEXT_PUBLIC_BASE_URL }}" \
+                  --build-arg NEXT_PUBLIC_ADMIN_PASSWORD="${{ secrets.NEXT_PUBLIC_ADMIN_PASSWORD }}" \
                   ghcr.io/${{ github.repository }}:latest

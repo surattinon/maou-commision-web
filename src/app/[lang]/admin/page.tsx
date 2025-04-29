@@ -49,7 +49,7 @@ export default function StatusManagement() {
       <div className="h-screen w-full flex items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <GridBackground />
       <Spotlight />
-        <div className="z-10 p-8 max-w-md w-full">
+        <div className="z-10 p-8 max-w-md w-full bg-[#545454]/10 backdrop-blur-xs border border-[#353535] rounded-lg">
           <h1 className="text-2xl text-white mb-6">Admin Login</h1>
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleLogin}>
