@@ -50,7 +50,7 @@ const Price = async ({ params }: { params: Promise<{ lang: string }> }) => {
           {dict.info.priceTitle}
         </h2>
         <ul className="space-y-2 text-white mb-20">
-          {dict.pricing.prices.map((price, index) => (
+          {dict.pricing.prices.map((price: string, index: number) => (
             <li key={index} className="flex items-start">
               <span className="text-white mr-2 text-lg">•</span>
               <span className="text-lg font-normal text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-2" dangerouslySetInnerHTML={{ __html: price }}></span>

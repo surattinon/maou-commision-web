@@ -6,18 +6,6 @@ import { Spotlight } from "@/components/blocks/spotlight-new"
 import { getDictionary } from '@/lib/dictionary'
 import LangSwitcher from "@/components/ui/lang-switcher"
 
-export interface CommissionData {
-  info: InfoSection;
-}
-
-export interface InfoSection {
-  ruleTitle: string;
-  rules: string[];
-  serviceTitle: string;
-  services: string[];
-  paymentTitle: string;
-  payments: string[];
-}
 
 const Info = async ({ params }: { params: Promise<{ lang: string }> }) => {
   const { lang } = await params
@@ -60,7 +48,7 @@ const Info = async ({ params }: { params: Promise<{ lang: string }> }) => {
           {dict.info.ruleTitle}
         </h2>
         <ul className="space-y-2 text-white mb-20">
-          {dict.info.rules.map((rule, index) => (
+          {dict.info.rules.map((rule: string, index: number) => (
             <li key={index} className="flex items-start">
               <span className="text-white mr-2">•</span>
               <span className="text-normal font-normal text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-2">{rule}</span>
@@ -72,7 +60,7 @@ const Info = async ({ params }: { params: Promise<{ lang: string }> }) => {
           {dict.info.serviceTitle}
         </h2>
         <ul className="space-y-2 text-white mb-20">
-          {dict.info.services.map((service, index) => (
+          {dict.info.services.map((service: string, index: number) => (
             <li key={index} className="flex items-start">
               <span className="text-white mr-2">•</span>
               <span className="text-normal font-normal text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-2">{service}</span>
@@ -86,7 +74,7 @@ const Info = async ({ params }: { params: Promise<{ lang: string }> }) => {
 
         <div className="flex justify-between">
           <ul className="space-y-2 text-white mb-20">
-            {dict.info.payments.map((payment, index) => (
+            {dict.info.payments.map((payment: string, index: number) => (
               <li key={index} className="flex items-start">
                 <span className="text-white mr-2">•</span>
                 <span className="text-normal font-normal text-left bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-2">{payment}</span>

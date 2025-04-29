@@ -9,13 +9,16 @@ const montserrat = Montserrat({
 })
 
 const notoSansThai = Noto_Sans_Thai({
-  variable: '--font-noto-thai'
+  variable: '--font-noto-thai',
+  subsets: ['thai']
 })
 
-export async function generateMetadata({ }: {
-  params: { lang: string }
+export async function generateMetadata({ 
+  params,
+}: {
+  params: Promise<{ lang: string }>
 }): Promise<Metadata> {
-
+  const { lang } = await params
   return {
     title: {
       template: '%s | MAOU Commission Service',

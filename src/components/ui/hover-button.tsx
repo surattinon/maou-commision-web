@@ -8,7 +8,7 @@ interface HoverButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 }
 
 const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, ...props }) => {
     const buttonRef = React.useRef<HTMLButtonElement>(null)
     const [isListening, setIsListening] = React.useState(false)
     const [circles, setCircles] = React.useState<Array<{
@@ -23,9 +23,8 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
     const createCircle = React.useCallback((x: number, y: number) => {
       const buttonWidth = buttonRef.current?.offsetWidth || 0
       const xPos = x / buttonWidth
-      const color = `linear-gradient(to right, var(--circle-start) ${xPos * 100}%, var(--circle-end) ${
-        xPos * 100
-      }%)`
+      const color = `linear-gradient(to right, var(--circle-start) ${xPos * 100}%, var(--circle-end) ${xPos * 100
+        }%)`
 
       setCircles((prev) => [
         ...prev,
@@ -36,7 +35,7 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
     const handlePointerMove = React.useCallback(
       (event: React.PointerEvent<HTMLButtonElement>) => {
         if (!isListening) return
-        
+
         const currentTime = Date.now()
         if (currentTime - lastAddedRef.current > 100) {
           lastAddedRef.current = currentTime
@@ -103,10 +102,12 @@ const HoverButton = React.forwardRef<HTMLButtonElement, HoverButtonProps>(
         onPointerEnter={handlePointerEnter}
         onPointerLeave={handlePointerLeave}
         {...props}
-        style={{
-          "--circle-start": "var(--tw-gradient-from, #a0d9f8)",
-          "--circle-end": "var(--tw-gradient-to, #3a5bbf)",
-        }}
+        style={
+          {
+            "--circle-start": "var(--tw-gradient-from, #a0d9f8)",
+            "--circle-end": "var(--tw-gradient-to, #3a5bbf)",
+          } as React.CSSProperties
+        }
       >
         {circles.map(({ id, x, y, color, fadeState }) => (
           <div
